@@ -98,12 +98,18 @@ label {
 input {
     height: 45px;
     border: none;
+   
     font-family: 'IBM Plex Sans', sans-serif;
     text-transform: capitalize;
     font-size: 16px;
     font-weight: 600;
     outline: none;
 }
+
+.invalid {
+    border-bottom: 2px solid red;
+
+  }
 
 .logo-for-inputs {
     display: flex;
@@ -282,6 +288,29 @@ input {
     font-weight: 700 !important;
     text-transform: capitalize;
 }
+.modes-area {
+    font-size: 13px;
+}
+#modes-area {
+    display: flex;
+    align-items: center;
+    
+    /* margin-right: 1rem; */
+  }
+  
+  .modes-area {
+    font-size: 0.9rem;
+    /* margin-right: 0.5rem; */
+  }
+  
+  #modes {
+    font-size: 0.9rem;
+    padding: 0.3rem;
+    border-radius: 0.3rem;
+    border: 1px solid #ccc;
+    outline: none;
+    background-color: #f5f5f5;
+  }
 
 /* Media Query part */
 
@@ -383,6 +412,7 @@ input {
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
+        
     }
 
     label {
@@ -449,29 +479,7 @@ input {
         font-size: 20px;
     }
 
-    .modes-area {
-        font-size: 13px;
-    }
-    #modes-area {
-        display: flex;
-        align-items: center;
-        
-        /* margin-right: 1rem; */
-      }
-      
-      .modes-area {
-        font-size: 0.9rem;
-        /* margin-right: 0.5rem; */
-      }
-      
-      #modes {
-        font-size: 0.9rem;
-        padding: 0.3rem;
-        border-radius: 0.3rem;
-        border: 1px solid #ccc;
-        outline: none;
-        background-color: #f5f5f5;
-      }
+    
 
 
     #btn {

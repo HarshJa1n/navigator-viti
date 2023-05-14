@@ -1,13 +1,12 @@
 import React from "react";
 import Navbar from "./components/Navbar";
 import Container from "./components/Container";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-import { useMemo } from "react";
-import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
-const containerStyle = {
-  width: '100%',
-  height: '100%'
-};
+
+
+
 
 // logo location
 const logo = "./Graviti Logo 1.png"
@@ -17,6 +16,8 @@ function App() {
     <>
       <Navbar imgSrc={logo} />
       <Container />
+      <ToastContainer />
+
     </>
   )
 }

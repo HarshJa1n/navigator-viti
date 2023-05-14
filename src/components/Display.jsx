@@ -2,6 +2,8 @@
 // import { GoogleMap, useJsApiLoader, Autocomplete, DirectionsRenderer, useLoadScript, Marker } from '@react-google-maps/api'
 import Results from "./Results"
 import React, { useRef, useState, Spinner } from 'react'
+import { toast } from "react-toastify";
+
 
 import { useMemo } from "react";
 import { GoogleMap, useLoadScript, Marker, Autocomplete, DirectionsRenderer } from "@react-google-maps/api";
@@ -25,6 +27,7 @@ export default function Display() {
     const destinationRef = useRef()
     const travelMode = useRef()
     const wayPoint = useRef()
+    const [placeSelected, setPlaceSelected] = useState(null);
     //Origin, Destination states and hooks
     var [origin, setOrigin] = useState("")
     var [dest, setDest] = useState("")
@@ -122,6 +125,18 @@ export default function Display() {
 
         }
     }
+    const handleBlur = () => {
+        setTimeout(() => {
+            if (!!placeSelected) {
+                // Place selected, show success toast
+                toast.success('Place selected');
+                setPlaceSelected(false);
+            } else {
+                // Place not selected, show warning toast
+                toast.warning('Please choose a valid place');
+            }
+        }, 100);
+    };
 
     return (
 
@@ -137,7 +152,7 @@ export default function Display() {
                                 <div className="logo-for-inputs">
                                     {/* { Rather using font awesome logos, i prefere to do it like this} */}
                                     <span id="input-logo-origin"></span>
-                                    <Autocomplete><input id="origin" className="user_Input" type="text" placeholder="Origin" ref={originRef} /></Autocomplete>
+                                    <Autocomplete onPlaceChanged={() => console.log('Place selected')}><input id="origin" className="user_Input" type="text" placeholder="Origin" ref={originRef} /></Autocomplete>
                                 </div>
 
                             </div>
@@ -147,9 +162,9 @@ export default function Display() {
                                 <div id="anotherWaypoint" className="logo-for-inputs">
                                     <span id="input-logo-stop"></span>
                                     <div id="Waypoints-field">
-                                        <Autocomplete>
+                                        <Autocomplete onPlaceChanged={() => { console.log("selected"); setPlaceSelected(true) }}>
                                             {/* { <Waypoints id={id} />} */}
-                                            <input type="text" className="user_Input" name="" id="waypoint" placeholder=" Stop" ref={wayPoint} />
+                                            <input type="text" className="user_Input" name="" id="waypoint" placeholder=" Stop" ref={wayPoint} onBlur={handleBlur} />
                                         </Autocomplete>
 
                                         <AddWayPoints waypoints={waypointsArr} />
@@ -166,7 +181,7 @@ export default function Display() {
                                 <label>{labels[2]}</label>
                                 <div className="logo-for-inputs">
                                     <i className="fa-solid fa-location-dot"></i>
-                                    <Autocomplete>
+                                    <Autocomplete onPlaceChanged={() => console.log('Place selected')}>
                                         <input type="text" name="" id="dest" className="user_Input" placeholder="Destination" ref={destinationRef} />
                                     </Autocomplete>
                                 </div>
