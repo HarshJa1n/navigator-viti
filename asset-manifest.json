@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/navigator-viti/static/css/main.79328f5f.css",
-    "main.js": "/navigator-viti/static/js/main.7904272b.js",
+    "main.css": "/navigator-viti/static/css/main.0f881c06.css",
+    "main.js": "/navigator-viti/static/js/main.b28513a2.js",
     "index.html": "/navigator-viti/index.html",
-    "main.79328f5f.css.map": "/navigator-viti/static/css/main.79328f5f.css.map",
-    "main.7904272b.js.map": "/navigator-viti/static/js/main.7904272b.js.map"
+    "main.0f881c06.css.map": "/navigator-viti/static/css/main.0f881c06.css.map",
+    "main.b28513a2.js.map": "/navigator-viti/static/js/main.b28513a2.js.map"
   },
   "entrypoints": [
-    "static/css/main.79328f5f.css",
-    "static/js/main.7904272b.js"
+    "static/css/main.0f881c06.css",
+    "static/js/main.b28513a2.js"
   ]
 }
