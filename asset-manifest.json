@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/navigator-viti/static/css/main.79328f5f.css",
+    "main.js": "/navigator-viti/static/js/main.7904272b.js",
+    "index.html": "/navigator-viti/index.html",
+    "main.79328f5f.css.map": "/navigator-viti/static/css/main.79328f5f.css.map",
+    "main.7904272b.js.map": "/navigator-viti/static/js/main.7904272b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.79328f5f.css",
+    "static/js/main.7904272b.js"
+  ]
+}
